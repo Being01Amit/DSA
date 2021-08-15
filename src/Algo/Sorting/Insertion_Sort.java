@@ -3,7 +3,7 @@ package Algo.Sorting;
 public class Insertion_Sort {
     public static void main(String[] args){
 
-        int arr[] = {3,2,6,5,1,7,8,9,4,0};
+        int[] arr = {3,2,6,5,1,7,8,9,4,0};
 
         for(int i =1; i< arr.length; i++){
             int temp = arr[i];
@@ -27,7 +27,7 @@ public class Insertion_Sort {
         System.out.println("Array in descending order :");
 
         for(int i = arr.length -1; i>=0 ; i--){
-            System.out.print(arr[i]+"  ");
+            System.out.print(arr[i]+" ");
         }
     }
 }
