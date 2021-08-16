@@ -1,4 +1,4 @@
-package Algo.Sorting;
+package Algo.Sorting.Sorting;
 import java.util.*;
 
 public class JustSort {
