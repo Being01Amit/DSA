@@ -58,6 +58,7 @@ public class BinarySearch {
         return -1;
     }
 
+    /* Recursive implementation of Binary Search  */
     public static int BinarySearchReccursive(int[] arr, int key, int low , int high ){
 
         if(low > high) return -1;
