@@ -17,9 +17,9 @@ public class BinarySearch {
        int result = BinarySearchReccursive(arr,key,low,high);
 
         if (result == -1){
-            System.out.println("Element is not present in an Array");
+            System.out.println("Element "+key+" is not present in an Array");
         }else {
-            System.out.println("Element is Present in an Array at Index : "+ arr[key -1] );
+            System.out.println("Element "+ key+" is Present in an Array at Index : "+ arr[key -1] );
         }
     }
 
@@ -71,6 +71,5 @@ public class BinarySearch {
 
 
             return BinarySearchReccursive(arr, key, low, mid - 1);
-
     }
 }
