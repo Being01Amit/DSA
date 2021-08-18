@@ -3,20 +3,28 @@ import java.util.*;
 public class BinarySearch {
     public static void main(String[] args){
         int[] arr = {3,2,6,5,1,7,8,9,4,0};
+        int low = 0;
+        int high = arr.length-1;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Element to Search in Array : ");
+        int key = sc.nextInt();
 
         // Sorting the Array for Binary Search
         Arrays.sort(arr);
-        int result = binarySearch(arr,55);
+//       int result = binarySearchIterative (arr,key);
+
+       int result = BinarySearchReccursive(arr,key,low,high);
 
         if (result == -1){
             System.out.println("Element is not present in an Array");
         }else {
-            System.out.println("Element is Present in an Array : "+ result);
+            System.out.println("Element is Present in an Array at Index : "+ arr[key -1] );
         }
     }
 
     /* Iterative implementation of Binary Search  */
-    public static int binarySearch(int[] arr, int key){
+    public static int binarySearchIterative (int[] arr, int key){
         //Lowest index of an Array
         int low = 0;
 
@@ -48,5 +56,20 @@ public class BinarySearch {
 
         // if is not present in the array so simply return -1
         return -1;
+    }
+
+    public static int BinarySearchReccursive(int[] arr, int key, int low , int high ){
+
+        if(low > high) return -1;
+
+        int mid = (low + high)/2;
+
+        if(arr[mid] == key) return mid;
+
+        if (key > arr[mid]) return BinarySearchReccursive(arr, key, mid + 1, high);
+
+
+            return BinarySearchReccursive(arr, key, low, mid - 1);
+
     }
 }
