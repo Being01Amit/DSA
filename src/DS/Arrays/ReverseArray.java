@@ -5,12 +5,44 @@ import java.util.Collections;
 
 public class ReverseArray{
     public static void main(String[] args){
-        Integer[] a = {1,2,3,4,5,6,7,8,9,0};
-        reverseArray(a);
+        int[] arr = {1,2,3,4,5,6,7,8,9,0};
+        int n = arr.length;
+//        reverseArray(arr);
+//        ReverseArrays(arr);
+
+        LeftRotateArray(arr,n);
+
     }
 
     private static void reverseArray(Integer[] a){
         Collections.reverse(Arrays.asList(a));
         System.out.println(Arrays.asList(a));
+    }
+
+    public static void ReverseArrays(int[] arr){
+        int low = 0;
+        int high = arr.length - 1;
+        while (arr[low] < arr[high]) {
+            int temp = arr[low];
+            arr[low] = arr[high];
+            arr[high] = temp;
+            low++;
+            high--;
+        }
+
+        for (int j : arr) {
+            System.out.print(j + " ");
+        }
+    }
+
+    public static void LeftRotateArray(int[] arr, int n){
+        int temp = arr[0];
+        for (int i = 1; i < n-1; i++){
+            arr[i-1] = arr[i];
+        }
+        arr[n-1] = temp;
+        for (int i =0;i < n;i++){
+            System.out.print(arr[i]+" ");
+        }
     }
 }
